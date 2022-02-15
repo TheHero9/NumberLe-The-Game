@@ -196,3 +196,10 @@ margin-bottom: .5em;
 .btn:hover {
   background: #00B4D8
 }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+}
