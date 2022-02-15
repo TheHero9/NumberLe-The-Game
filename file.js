@@ -1,5 +1,5 @@
 const targetNumbers = [];
-const allNumbers7Digit=[];
+
 const allPossibleNumbers=[];
 var digits = ['0', '1', '2', '3', '4', '5', '6', '7'];
 const NUMBER_LENGTH = 7
@@ -35,13 +35,6 @@ function generatePermutations(list, size) {
   );
 }
 
-function generatePossibleNumbers(){
-  for (var i=1000000; i<10000000;i++){
-    var stringNumber=i.toString()
-    allNumbers7Digit.push(stringNumber)
-  }
-
-}
 
 function startInteraction() {
   document.addEventListener("click", handleMouseClick)
@@ -123,11 +116,6 @@ function submitGuess() {
     return word + tile.dataset.letter
   }, "")
 
-  if (!allNumbers7Digit.includes(guess)) {
-    showAlert("Not a 7-digit number")
-    shakeTiles(activeTiles)
-    return
-  }
 
   stopInteraction()
   activeTiles.forEach((...params) => flipTile(...params, guess))
