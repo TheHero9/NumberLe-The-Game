@@ -73,7 +73,7 @@ body{
 }
 
 .tile{
-  font-size: 3em;
+  font-size: 2em;
   color: white;
   border: 0.1em solid hsl(240, 2%, 23%);
   font-weight: bold;
