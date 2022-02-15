@@ -22,7 +22,6 @@ while (targetNumber[0]==="0"){
 console.log(targetNumber)
 
 startInteraction()
-generatePossibleNumbers()
 
 function generatePermutations(list, size) {
   if (size > list.length) return [];
