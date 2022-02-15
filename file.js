@@ -62,7 +62,7 @@ function handleMouseClick(e) {
   }
 
   if (e.target.matches("[data-info]")) {
-    showAlert("Guess the 5-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
+    showAlert("Guess the 7-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
          🟩=CORRECT | 🟨=WRONG POSITION | ⬛=WRONG ", duration=4000)
     return
   }
