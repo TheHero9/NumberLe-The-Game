@@ -1,8 +1,8 @@
 const targetNumbers = [];
-const allNumbers5Digit=[];
+const allNumbers7Digit=[];
 const allPossibleNumbers=[];
-var digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const NUMBER_LENGTH = 5
+var digits = ['0', '1', '2', '3', '4', '5', '6', '7'];
+const NUMBER_LENGTH = 7
 const FLIP_ANIMATION_DURATION = 500
 const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
@@ -10,11 +10,16 @@ const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
 
 
-var arr = generatePermutations(digits, 5);
+var arr = generatePermutations(digits, 7);
 arr.forEach(e => allPossibleNumbers.push(e.join('')));
 
-const targetNumber = allPossibleNumbers[Math.floor(Math.random()*30240)]
 
+var targetNumber = allPossibleNumbers[Math.floor(Math.random()*30240)]
+while (targetNumber[0]==="0"){
+  targetNumber = allPossibleNumbers[Math.floor(Math.random()*30240)]
+}
+
+console.log(targetNumber)
 
 startInteraction()
 generatePossibleNumbers()
@@ -30,12 +35,10 @@ function generatePermutations(list, size) {
   );
 }
 
-
-
 function generatePossibleNumbers(){
-  for (var i=10000; i<100000;i++){
+  for (var i=1000000; i<10000000;i++){
     var stringNumber=i.toString()
-    allNumbers5Digit.push(stringNumber)
+    allNumbers7Digit.push(stringNumber)
   }
 
 }
@@ -120,8 +123,8 @@ function submitGuess() {
     return word + tile.dataset.letter
   }, "")
 
-  if (!allNumbers5Digit.includes(guess)) {
-    showAlert("Not in a 5-digit number")
+  if (!allNumbers7Digit.includes(guess)) {
+    showAlert("Not a 7-digit number")
     shakeTiles(activeTiles)
     return
   }
@@ -209,7 +212,7 @@ function checkWinLose(guess, tiles) {
 
   const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
   if (remainingTiles.length === 0) {
-    showAlert(targetNumber.toUpperCase(), null)
+    showAlert("Your number was: "+targetNumber, null)
     stopInteraction()
   }
 }
