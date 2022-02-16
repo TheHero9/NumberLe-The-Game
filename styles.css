@@ -44,7 +44,7 @@ body{
 .s{
   width: 5rem;
 }
-.key:hover, .key:focus{
+.key:hover {
   background-color: #00B4D8;
 }
 .key.wrong{
@@ -170,8 +170,9 @@ margin-bottom: .5em;
 .info-div{
   position: absolute;
   left: 10px;
-  top: 4%;
+  top: 5%;
   opacity: 50%;
+  left: 5%;
 }
 
 
@@ -183,7 +184,7 @@ margin-bottom: .5em;
   height:40px;
   border-width:0px;
   color:#fff;
-  border-color:#3cb0fd;
+  border-color:#00B4D8;
   font-weight:bold;
   border-top-left-radius:23px;
   border-top-right-radius:23px;
@@ -198,8 +199,39 @@ margin-bottom: .5em;
 }
 
 @media
-only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
 
+}
+
+
+/* restart button */
+
+
+.restart-button {
+  -webkit-border-radius: 29;
+  -moz-border-radius: 29;
+  border-radius: 29px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #3cb0fd;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  position: absolute;
+  left: 14%;
+  top:5%;
+  opacity: 75%;
+
+}
+
+.restart-button:hover {
+  background: #00B4D8;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }

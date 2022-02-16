@@ -19,7 +19,7 @@ while (targetNumber[0]==="0"){
   targetNumber = allPossibleNumbers[Math.floor(Math.random()*30240)]
 }
 
-console.log(targetNumber)
+
 
 startInteraction()
 
@@ -61,6 +61,11 @@ function handleMouseClick(e) {
     return
   }
 
+  if(e.target.matches("[data-restart]")){
+    restartGame()
+    return
+  }
+
   if (e.target.matches("[data-info]")) {
     showAlert("Guess the 7-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
          🟩=CORRECT | 🟨=WRONG POSITION | ⬛=WRONG ", duration=4000)
@@ -83,6 +88,8 @@ function handleKeyPress(e) {
     pressKey(e.key)
     return
   }
+
+
 }
 
 function pressKey(key) {
@@ -217,4 +224,9 @@ function danceTiles(tiles) {
       )
     }, (index * DANCE_ANIMATION_DURATION) / 5)
   })
+}
+
+function restartGame(){
+   window.location.reload();
+
 }
