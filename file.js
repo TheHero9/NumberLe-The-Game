@@ -77,6 +77,7 @@ function handleMouseClick(e) {
 function handleKeyPress(e) {
   if (e.key === "Enter") {
     submitGuess()
+    makeSound(e.key)
     return
   }
 
@@ -204,6 +205,7 @@ function checkWinLose(guess, tiles) {
     showAlert("You Win! Thank you for playing. <3", 5000)
     danceTiles(tiles)
     stopInteraction()
+    winSound()
     return
   }
 
@@ -211,6 +213,7 @@ function checkWinLose(guess, tiles) {
   if (remainingTiles.length === 0) {
     showAlert("Your number was: "+targetNumber, null)
     stopInteraction()
+    loseSound()
   }
 }
 
@@ -236,7 +239,28 @@ function restartGame(){
 
 
 function makeSound(key){
+  switch (key) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+    var sound1 = new Audio("click.mp3");
+          sound1.play();
+      break;
 
-      sound1.play();
-
+  }
+}
+function winSound(key){
+  var sound2=  new Audio("enter.mp3")
+  sound2.play();
+}
+function loseSound(key){
+  var sound3= new Audio("lose.mp3")
+  sound3.play();
 }
