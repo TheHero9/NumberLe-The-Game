@@ -8,6 +8,7 @@ const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
+var sound1 = new Audio("click.mp3");
 
 
 var arr = generatePermutations(digits, 7);
@@ -236,8 +237,6 @@ function restartGame(){
 
 function makeSound(key){
 
-
-      const sound1 = new Audio("click.mp3");
       sound1.play();
-      
+
 }
