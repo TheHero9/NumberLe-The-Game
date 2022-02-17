@@ -86,7 +86,9 @@ function handleKeyPress(e) {
 
   if (e.key.match(/^[0-9]$/)) {
     pressKey(e.key)
+    makeSound(e.key)
     return
+
   }
 
 
@@ -229,4 +231,13 @@ function danceTiles(tiles) {
 function restartGame(){
    window.location.reload();
 
+}
+
+
+function makeSound(key){
+
+
+      const sound1 = new Audio("click.mp3");
+      sound1.play();
+      
 }
