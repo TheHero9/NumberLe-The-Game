@@ -8,7 +8,7 @@ const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
-var sound1 = new Audio("click.mp3");
+var sound1 = new Audio("sounds/click.mp3");
 
 
 var arr = generatePermutations(digits, 7);
@@ -62,10 +62,10 @@ function handleMouseClick(e) {
     return
   }
 
-  if(e.target.matches("[data-restart]")){
-    restartGame()
-    return
-  }
+  // if(e.target.matches("[data-restart]")){
+  //   restartGame()
+  //   return
+  // }
 
   if (e.target.matches("[data-info]")) {
     showAlert("Guess the 7-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
@@ -77,7 +77,6 @@ function handleMouseClick(e) {
 function handleKeyPress(e) {
   if (e.key === "Enter") {
     submitGuess()
-    // makeSound(e.key)
     return
   }
 
@@ -88,9 +87,7 @@ function handleKeyPress(e) {
 
   if (e.key.match(/^[0-9]$/)) {
     pressKey(e.key)
-    // makeSound(e.key)
     return
-
   }
 
 
@@ -119,6 +116,7 @@ function submitGuess() {
   if (activeTiles.length !== NUMBER_LENGTH) {
     showAlert("Not enough numbers")
     shakeTiles(activeTiles)
+    wrongSound()
     return
   }
 
@@ -214,6 +212,7 @@ function checkWinLose(guess, tiles) {
     showAlert("Your number was: "+targetNumber, null)
     stopInteraction()
     loseSound()
+
   }
 }
 
@@ -234,7 +233,6 @@ function danceTiles(tiles) {
 
 function restartGame(){
    window.location.reload();
-
 }
 
 
@@ -250,24 +248,35 @@ function makeSound(key){
     case "7":
     case "8":
     case "9":
-    var sound1 = new Audio("click.mp3");
+    var sound1 = new Audio("sounds/click.mp3");
           sound1.play();
       break;
 
   }
 }
 function winSound(key){
-  var sound2=  new Audio("enter.mp3")
+  var sound2=  new Audio("sounds/enter.mp3")
   sound2.play();
 }
 function loseSound(key){
-  var sound3= new Audio("lose.mp3")
+  var sound3= new Audio("sounds/lose.mp3")
   sound3.play();
 }
+function wrongSound(){
+  var wrong = new Audio("sounds/wrong.mp3")
+  wrong.play()
+}
 
-
+// Key Sound
 $(".s").click(function(){
   var buttonInnerHTML = this.innerHTML;
   makeSound(buttonInnerHTML);
+})
+$(document).keydown(function(e){
+  makeSound(e.key);
+})
 
+// Restart Game
+$(".restart-button").click(function(){
+  restartGame()
 })
