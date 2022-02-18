@@ -77,7 +77,7 @@ function handleMouseClick(e) {
 function handleKeyPress(e) {
   if (e.key === "Enter") {
     submitGuess()
-    makeSound(e.key)
+    // makeSound(e.key)
     return
   }
 
@@ -88,7 +88,7 @@ function handleKeyPress(e) {
 
   if (e.key.match(/^[0-9]$/)) {
     pressKey(e.key)
-    makeSound(e.key)
+    // makeSound(e.key)
     return
 
   }
@@ -264,3 +264,10 @@ function loseSound(key){
   var sound3= new Audio("lose.mp3")
   sound3.play();
 }
+
+
+$(".s").click(function(){
+  var buttonInnerHTML = this.innerHTML;
+  makeSound(buttonInnerHTML);
+
+})
