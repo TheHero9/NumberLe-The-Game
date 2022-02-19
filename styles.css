@@ -169,34 +169,29 @@ margin-bottom: .5em;
 
 
 .info-div{
-  position: absolute;
-  left: 10px;
-  top: 5%;
-  opacity: 50%;
-  left: 5%;
+  opacity: 70%;
+
 }
 
 
 
 .btn {
-  font-size:17px;
-  font-family:Arial;
-  width:40px;
-  height:40px;
-  border-width:0px;
-  color:#fff;
-  border-color:#00B4D8;
-  font-weight:bold;
-  border-top-left-radius:23px;
-  border-top-right-radius:23px;
-  border-bottom-left-radius:23px;
-  border-bottom-right-radius:23px;
-  text-shadow: 1px 1px 0px #2f6627;
-  background:#3cb0fd;
+  background: #3cb0fd;
+ -webkit-border-radius: 60;
+ -moz-border-radius: 60;
+ border-radius: 60px;
+ font-family: Arial;
+ color: white;
+ font-size: 16px;
+ padding: 10px 20px 10px 20px;
+ border: solid #000000 2px;
+ text-decoration: none;
+ margin-left: 10px;
+
 }
 
 .btn:hover {
-  background: #00B4D8
+  background: #00B4D8;
 }
 
 @media
@@ -211,8 +206,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 
 .restart-button {
-  -webkit-border-radius: 29;
-  -moz-border-radius: 29;
+  /* -webkit-border-radius: 29;
+  -moz-border-radius: 29; */
   border-radius: 29px;
   font-family: Arial;
   color: #ffffff;
@@ -220,19 +215,31 @@ only screen and (min-device-pixel-ratio: 1.5) {
   background: #3cb0fd;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  position: absolute;
-  left: 14%;
-  top:5%;
   opacity: 75%;
+  border-color: black;
 
 }
 
 .restart-button:hover {
   background: #00B4D8;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+}
+
+/* NavBar */
+#title{
+  font-size: 1.5rem;
+  /* padding: 1.5rem 2.5rem; */
+  background-color: #FEE3EC;
+  font-family: 'Merriweather', serif;
+  margin: 50px;
+}
+
+.navbar-brand{
+  font-size: 40px;
+  margin-right: 20% ;
+}
+
+.container-fluid{
+    padding: 1% 5% 1% 5%;
+    background-color: #3498db;
+    border-radius: 70px;
 }
