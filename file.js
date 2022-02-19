@@ -62,16 +62,17 @@ function handleMouseClick(e) {
     return
   }
 
-  // if(e.target.matches("[data-restart]")){
-  //   restartGame()
-  //   return
-  // }
-
   if (e.target.matches("[data-info]")) {
     showAlert("Guess the 7-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
          🟩=CORRECT | 🟨=WRONG POSITION | ⬛=WRONG ", duration=4000)
     return
   }
+
+  if (e.target.matches("[data-credits]")) {
+    showAlert("Designed by Demetrios Vlassis. Special thanks to Yavor Borissov!")
+    return
+  }
+
 }
 
 function handleKeyPress(e) {

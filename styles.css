@@ -70,6 +70,7 @@ body{
   margin-top: 2.5em;
   margin-left: 2.5em;
   margin-right: 2.5em;
+  margin-bottom: 2.5em;
 
 }
 
@@ -186,7 +187,8 @@ margin-bottom: .5em;
  padding: 10px 20px 10px 20px;
  border: solid #000000 2px;
  text-decoration: none;
- margin-left: 10px;
+
+
 
 }
 
@@ -201,7 +203,14 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 }
 
+.margin{
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
 
+.credits{
+  margin-left: 0;
+}
 /* restart button */
 
 
@@ -224,11 +233,12 @@ only screen and (min-device-pixel-ratio: 1.5) {
   background: #00B4D8;
 }
 
+
+
 /* NavBar */
 #title{
   font-size: 1.5rem;
-  /* padding: 1.5rem 2.5rem; */
-  background-color: #FEE3EC;
+  background-color: white;
   font-family: 'Merriweather', serif;
   margin: 50px;
 }
@@ -242,4 +252,34 @@ only screen and (min-device-pixel-ratio: 1.5) {
     padding: 1% 5% 1% 5%;
     background-color: #3498db;
     border-radius: 70px;
+}
+
+/* Footer Section */
+#footer{
+  text-align: center;
+  margin-top: 8%;
+}
+
+.fa-3x{
+  margin-right: 10px;
+}
+
+.footer-link{
+  color: black;
+  font-size: 2.0rem;;
+  text-decoration: none;
+}
+
+.footer-box{
+  margin-bottom: 20px;
+}
+
+.fa-3x:hover{
+  color: #FFAA4C;
+}
+
+.container-fluid2{
+    padding: 1% 5% 0% 5%;
+    background-color: #3498db;
+    border-radius: 20px;
 }
