@@ -63,8 +63,7 @@ function handleMouseClick(e) {
   }
 
   if (e.target.matches("[data-info]")) {
-    showAlert("Guess the 7-digit number.                           You'll have 5 attempts.The numbers are not repeated.\
-         🟩=CORRECT | 🟨=WRONG POSITION | ⬛=WRONG ", duration=4000)
+
     return
   }
 
@@ -201,10 +200,11 @@ function shakeTiles(tiles) {
 
 function checkWinLose(guess, tiles) {
   if (guess === targetNumber) {
-    showAlert("You Win! Thank you for playing. <3", 5000)
+    showAlert("You Win! Thank you for playing!", 5000)
     danceTiles(tiles)
     stopInteraction()
     winSound()
+    shakeTiles(activeTiles)
     return
   }
 
@@ -213,6 +213,7 @@ function checkWinLose(guess, tiles) {
     showAlert("Your number was: "+targetNumber, null)
     stopInteraction()
     loseSound()
+    shakeTiles(activeTiles)
 
   }
 }
@@ -281,3 +282,30 @@ $(document).keydown(function(e){
 $(".restart-button").click(function(){
   restartGame()
 })
+
+
+// Add Text Blocks
+
+
+document.querySelector(".info").addEventListener("click", function(){
+  document.querySelector(".box").classList.remove("hidden")
+
+    setTimeout(() => {
+      document.querySelector(".box").classList.add("hidden")
+    }, 5000)
+})
+
+// document.querySelector(".close-modal").addEventListener("click", function(){
+//   console.log(23)
+// })
+
+
+
+
+
+document.addEventListener('keydown', function (e) {
+
+  if (e.key === 'Escape' && !document.querySelector(".box").classList.contains('hidden')) {
+    document.querySelector(".box").classList.add("hidden")
+  }
+});
