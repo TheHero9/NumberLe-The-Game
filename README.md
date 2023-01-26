@@ -1,7 +1,11 @@
 # 🎲 NumberLe
 
  - NumberLe is a game where the player is given 5 tries to guess a randomly generated 5-digit number.
+<img src="screenshotReadme.jpg" alt="drawing" width="500"/>
 
+
+## 💼 Structure
+<img src="screenshotReadme2.jpg" alt="drawing" width="500"/>
 
 ## 🎮 Gameplay
 
